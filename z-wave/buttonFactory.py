@@ -1,3 +1,4 @@
+# import from module if needed
 from jason import *
 
 # list of buttons on the remote.
