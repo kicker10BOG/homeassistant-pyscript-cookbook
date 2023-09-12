@@ -1,5 +1,9 @@
 from jason import *
 
+# list of buttons on the remote.
+# If you have multiple remotes with different amounts of buttons, each will need its own list
+buttons = ["001", "002", "003", "004"]
+
 # the button factory. It sets up the triggers and performs the actions
 # param nodeId: the z-wave node_id to listen for
 # param buttons: the list of buttons
@@ -47,57 +51,10 @@ def zwave_remote_setup(nodeId, buttons, sequences, tracker, waitTime = 1):
                     else:
                         action[0]()
         except:
+            # if error, reset
             state.set(tracker, "")
 
     return handle_command
-
-
-# exampleSequence = [
-#     [
-#         'tl default',
-#         [
-#             'tl tl',
-#             'tl tr',
-#             'tl bl',
-#             'tl br',
-#         ]
-#     ],
-#     [
-#         'tr default',
-#         [
-#             'tr tl',
-#             [
-#                 'tr tr default',
-#                 [
-#                     'tr tr tl',
-#                     'tr tr tr',
-#                     'tr tr bl',
-#                     'tr tr br',
-#                 ]
-#             ],
-#             'tr bl',
-#             'tr br',
-#         ]
-#     ],
-#     [
-#         'bl default',
-#         [
-#             'bl tl',
-#             'bl tr',
-#             'bl bl',
-#             'bl br',
-#         ]
-#     ],
-#     [
-#         'br default',
-#         [
-#             'br tl',
-#             'br tr',
-#             'br bl',
-#             'br br',
-#         ]
-#     ],
-# ]
 
 # define functions to be called
 
