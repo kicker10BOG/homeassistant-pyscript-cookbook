@@ -183,4 +183,5 @@ jason_chaise_remote_sequences = [
     ],
 ]
 
+# setup buttons
 jason_chaise_remote_ref = zigbee2mqtt_button_factory("homeassistant/zigbee2mqtt/jason_chaise_remote", buttons, jason_chaise_remote_sequences, jason_chaise_remote_tracker)
